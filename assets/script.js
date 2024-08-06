@@ -22,11 +22,13 @@ const arrow_right = document.querySelector(".arrow_right")
 
 arrow_left.addEventListener('click', () => {
   console.log("Gauche")
+  plusSlides(-1);
 })
 
 
 arrow_right.addEventListener('click', () => {
   console.log("Droite")
+  plusSlides(1);
 })
 const bannerImg = document.querySelector('.banner-img');
 
@@ -35,42 +37,42 @@ const bannerImg = document.querySelector('.banner-img');
 bannerImg.src = "./assets/images/slideshow/slide3.jpg"
 
 
-// let slideIndex = 0;
-// showSlides(slideIndex);
+let slideIndex = 0;
+showSlides(slideIndex);
 
 
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-// function showSlides(n) {
-//   let i;
-//   let slides = document.querySelectorAll("#banner ol li");
-//   let dots = document.querySelectorAll(".dots .bullet");
+function showSlides(n) {
+  let i;
+  let slides = document.querySelectorAll("#banner ol li");
+  let dots = document.querySelectorAll(".dots .bullet");
 
-//   if (n >= slides.length) { slideIndex = 0 }
-//   if (n < 0) { slideIndex = slides.length - 1 }
+  if (n >= slides.length) { slideIndex = 0 }
+  if (n < 0) { slideIndex = slides.length - 1 }
 
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
 
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" active", "");
-//   }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
 
-//   slides[slideIndex].style.display = "block";
-//   dots[slideIndex].className += " active";
-// }
+  slides[slideIndex].style.display = "block";
+  dots[slideIndex].className += " active";
+}
 
-// document.querySelectorAll(".arrow_left").forEach(button => {
-//   button.addEventListener("click", () => plusSlides(-1));
-// });
+document.querySelectorAll(".arrow_left").forEach(button => {
+  button.addEventListener("click", () => plusSlides(-1));
+});
 
-// document.querySelectorAll(".arrow_right").forEach(button => {
-//   button.addEventListener("click", () => plusSlides(1));
-// });
+document.querySelectorAll(".arrow_right").forEach(button => {
+  button.addEventListener("click", () => plusSlides(1));
+});
