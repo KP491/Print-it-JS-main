@@ -20,15 +20,32 @@ const slides = [
 const arrow_left = document.querySelector(".arrow_left")
 const arrow_right = document.querySelector(".arrow_right")
 
+let currentIndex = 0;
+
 arrow_left.addEventListener('click', () => {
-  console.log("Gauche")
-  plusSlides(-1);
+
+  currentIndex--;
+  if (currentIndex === -1) {
+       currentIndex = 3
+  console.log(currentIndex)
+  }
+
+  const bannerImg = document.querySelector('.banner-img');
+  bannerImg.src = "./assets/images/slideshow/" + slides[currentIndex].image
+  
 })
 
 
 arrow_right.addEventListener('click', () => {
-  console.log("Droite")
-  plusSlides(1);
+
+  currentIndex++;
+  if (currentIndex === 4) {
+       currentIndex = 0
+  console.log(currentIndex)
+  }
+  const bannerImg = document.querySelector('.banner-img');
+  bannerImg.src = "./assets/images/slideshow/" + slides[currentIndex].image
+  
 })
 const bannerImg = document.querySelector('.banner-img');
 
