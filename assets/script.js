@@ -93,3 +93,10 @@ document.querySelectorAll(".arrow_left").forEach(button => {
 document.querySelectorAll(".arrow_right").forEach(button => {
   button.addEventListener("click", () => plusSlides(1));
 });
+
+// Mettre à jour le texte de l'élément <p> avec la tagLine actuelle
+const tagLine = slides[currentIndex].tagLine;
+document.querySelector('p').textContent = tagLine; // Utilisation de textContent pour éviter de traiter le texte comme du HTML
+
+// Afficher un message dans la console lors d'un clic sur une flèche, en indiquant la direction
+console.log(`Clic sur la flèche ${direction}`);
