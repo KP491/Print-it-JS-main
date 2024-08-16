@@ -33,6 +33,7 @@ arrow_left.addEventListener('click', () => {
   const bannerImg = document.querySelector('.banner-img');
   bannerImg.src = "./assets/images/slideshow/" + slides[currentIndex].image
   
+  activeBulletPoint();
 })
 
 
@@ -46,6 +47,7 @@ arrow_right.addEventListener('click', () => {
   const bannerImg = document.querySelector('.banner-img');
   bannerImg.src = "./assets/images/slideshow/" + slides[currentIndex].image
   
+  activeBulletPoint();
 })
 const bannerImg = document.querySelector('.banner-img');
 
@@ -54,7 +56,7 @@ const bannerImg = document.querySelector('.banner-img');
 bannerImg.src = "./assets/images/slideshow/slide3.jpg"
 
 const dots = document.querySelector('.dots')
-
+//boucle 'for' pour générer les bullet points
 for(let i=0; i<4;i++){
   const span = document.createElement('span');
   span.classList.add("dot");
@@ -63,6 +65,14 @@ for(let i=0; i<4;i++){
     span.classList.add("dot_selected");
   }
   dots.appendChild(span)
+}
+
+const activeBulletPoint = () =>{
+  const activedot = document.querySelector('.dot_selected');
+  activedot.classList.remove('dot_selected');
+
+  const listDots = document.querySelectorAll('.dot');
+  listDots[currentIndex].classList.add('dot_selected');
 }
 
 
