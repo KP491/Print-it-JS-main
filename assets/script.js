@@ -74,6 +74,9 @@ displaySlide();
 const displaySlide = () => {
   const bannerImg = document.querySelector('.banner-img');
   bannerImg.src = "./assets/images/slideshow/" + slides[currentIndex].image
+
+  const p = document.querySelector('#banner p');
+  p.innerHTML = slides[currentIndex].tagLine
   activeBulletPoint();
 }
 
